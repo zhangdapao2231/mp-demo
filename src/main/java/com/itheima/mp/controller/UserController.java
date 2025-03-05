@@ -97,4 +97,11 @@ public class UserController {
         return userService.pageQueryUsers(userQuery);
     }
 
+
+    //返回男性用户
+    @ApiOperation("查询用户接口")
+    @GetMapping("{id}")
+    public UserVO queryUserman(@ApiParam("用户id") @PathVariable("id") Long id){
+        return userService.queryUserAndAddressById(id);
+    }
 }
